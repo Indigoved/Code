@@ -12,6 +12,16 @@ class INDIGOGAME_API ABaseCharacter : public ACharacter
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(EditAnywhere, Category="Camera")
+	class USpringArmComponent* SpringArm;
+	
+	UPROPERTY(EditAnywhere, Category="Camera")
+	class UCameraComponent* TPCamera;
+
+	UPROPERTY(EditAnywhere, Category="Settings")
+	float Sensitivity;
+
+public:
 	// Sets default values for this character's properties
 	ABaseCharacter();
 
@@ -25,5 +35,11 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+private:
+	void MoveForward(float Axis);
+	void MoveRight(float Axis);
+	void Turn(float Axis);
+	void LookUp(float Axis);
 
 };
