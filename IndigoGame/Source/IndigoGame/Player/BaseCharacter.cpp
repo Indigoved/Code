@@ -3,7 +3,9 @@
 
 #include "BaseCharacter.h"
 #include "Camera/CameraComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Weapon/BaseWeapon.h"
 
 
 // Sets default values
