@@ -21,6 +21,59 @@ public:
 	UPROPERTY(EditAnywhere, Category="Settings")
 	float Sensitivity;
 
+	/*HeadBoxes*/
+	/*HeadHitBox*/
+	UPROPERTY(EditDefaultsOnly, Category="HitBoxes")
+	class UHitBoxComponent* HeadHitBox;
+
+	/*ChestHitBox*/
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* ChestUHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* ChestDHitBox;
+
+	/*LeftHandHitBox*/
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* LeftHandUHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* LeftHandMHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* LeftHandDHitBox;
+
+	/*RightHandHitBox*/
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* RightHandUHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* RightHandMHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* RightHandDHitBox;
+
+	/*LeftLegHitBox*/
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* LeftLegUHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* LeftLegMHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* LeftLegDHitBox;
+
+	/*RightLegHitBox*/
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* RightLegUHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* RightLegMHitBox;
+
+	UPROPERTY(EditDefaultsOnly, Category = "HitBoxes")
+	class UHitBoxComponent* RightLegDHitBox;
+
+
 public:
 	// Sets default values for this character's properties
 	ABaseCharacter();

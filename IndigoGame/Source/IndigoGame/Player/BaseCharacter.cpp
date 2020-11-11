@@ -3,8 +3,10 @@
 
 #include "BaseCharacter.h"
 #include "Camera/CameraComponent.h"
+#include "Components/InputComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "HitBox/HitBoxComponent.h"
 #include "Weapon/BaseWeapon.h"
 
 
@@ -24,6 +26,53 @@ ABaseCharacter::ABaseCharacter()
 	TPCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ThirdPersonCamera"));
 	TPCamera->SetupAttachment(SpringArm, SpringArm->GetAttachSocketName());
 	TPCamera->bUsePawnControlRotation = false;
+
+	HeadHitBox = CreateDefaultSubobject<UHitBoxComponent>("HeadHitBox");
+	HeadHitBox->SetupAttachment(GetMesh(), FName("HeadHBSocket"));
+
+	ChestUHitBox = CreateDefaultSubobject<UHitBoxComponent>("ChestUHitBox");
+	ChestUHitBox->SetupAttachment(GetMesh(), FName("ChestUHBSocket"));
+
+	ChestDHitBox = CreateDefaultSubobject<UHitBoxComponent>("ChestDHitBox");
+	ChestDHitBox->SetupAttachment(GetMesh(), FName("ChestDHBSocket"));
+
+	LeftHandUHitBox = CreateDefaultSubobject<UHitBoxComponent>("LeftHandUHitBox");
+	LeftHandUHitBox->SetupAttachment(GetMesh(), FName("LeftHandUHBSocket"));
+
+	LeftHandMHitBox = CreateDefaultSubobject<UHitBoxComponent>("LeftHandMHitBox");
+	LeftHandMHitBox->SetupAttachment(GetMesh(), FName("LeftHandMHBSocket"));
+
+	LeftHandDHitBox = CreateDefaultSubobject<UHitBoxComponent>("LeftHandDHitBox");
+	LeftHandDHitBox->SetupAttachment(GetMesh(), FName("LeftHandDHBSocket"));
+
+	RightHandUHitBox = CreateDefaultSubobject<UHitBoxComponent>("RightHandUHitBox");
+	RightHandUHitBox->SetupAttachment(GetMesh(), FName("RightHandUHBSocket"));
+
+	RightHandMHitBox = CreateDefaultSubobject<UHitBoxComponent>("RightHandMHitBox");
+	RightHandMHitBox->SetupAttachment(GetMesh(), FName("RightHandMHBSocket"));
+
+	RightHandDHitBox = CreateDefaultSubobject<UHitBoxComponent>("RightHandDHitBox");
+	RightHandDHitBox->SetupAttachment(GetMesh(), FName("RightHandDHBSocket"));
+
+	LeftLegUHitBox = CreateDefaultSubobject<UHitBoxComponent>("LeftLegUHitBox");
+	LeftLegUHitBox->SetupAttachment(GetMesh(), FName("LeftLegUHBSocket"));
+
+	LeftLegMHitBox = CreateDefaultSubobject<UHitBoxComponent>("LeftLegMHitBox");
+	LeftLegMHitBox->SetupAttachment(GetMesh(), FName("LeftLegMHBSocket"));
+
+	LeftLegDHitBox = CreateDefaultSubobject<UHitBoxComponent>("LeftLegDHitBox");
+	LeftLegDHitBox->SetupAttachment(GetMesh(), FName("LeftLegDHBSocket"));
+
+	RightLegUHitBox = CreateDefaultSubobject<UHitBoxComponent>("RightLegUHitBox");
+	RightLegUHitBox->SetupAttachment(GetMesh(), FName("RightLegUHBSocket"));
+
+	RightLegMHitBox = CreateDefaultSubobject<UHitBoxComponent>("RightLegMHitBox");
+	RightLegMHitBox->SetupAttachment(GetMesh(), FName("RightLegMHBSocket"));
+
+	RightLegDHitBox = CreateDefaultSubobject<UHitBoxComponent>("RightLegDHitBox");
+	RightLegDHitBox->SetupAttachment(GetMesh(), FName("RightLegDHBSocket"));
+
+
 }
 
 // Called when the game starts or when spawned
