@@ -94,6 +94,8 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &ABaseCharacter::Attack);
+
 	PlayerInputComponent->BindAxis("MoveForward", this, &ABaseCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ABaseCharacter::MoveRight);
 	PlayerInputComponent->BindAxis("Turn", this, &ABaseCharacter::Turn);
@@ -135,4 +137,9 @@ void ABaseCharacter::LookUp(float Axis)
 
 		AddControllerPitchInput(Axis);
 	}
+}
+
+void ABaseCharacter::Attack()
+{
+	OnAttack();
 }
