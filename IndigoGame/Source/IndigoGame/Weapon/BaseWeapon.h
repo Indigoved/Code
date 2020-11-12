@@ -21,6 +21,17 @@ struct FAttackInfo
 {
 	GENERATED_BODY()
 
+	void operator = (FAttackInfo AttackInfo)
+	{
+		AnimMontage = AttackInfo.AnimMontage;
+		Fracture = AttackInfo.Fracture;
+		Breaking = AttackInfo.Breaking;
+		Bleeding = AttackInfo.Bleeding;
+		Crushing = AttackInfo.Crushing;
+		Cutting = AttackInfo.Cutting;
+		Piercing = AttackInfo.Piercing;
+	}
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	class UAnimMontage* AnimMontage;
 
@@ -47,7 +58,6 @@ struct FAttackInfo
 	/*пробитие*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	float Breaking;
-
 };
 
 
@@ -88,21 +98,21 @@ class INDIGOGAME_API ABaseWeapon : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
-	ABaseWeapon();
-
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Components")
 	class UStaticMeshComponent* WeaponMesh;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "WeaponSettings")
 	FWeaponData WeaponData;
 
+	UPROPERTY(Replicated, BlueprintReadWrite)
+	FAttackInfo LastAttack;
+
+public:
+	ABaseWeapon();
+	
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
+	virtual void GetLifetimeReplicatedProps(TArray < FLifetimeProperty >& OutLifetimeProps) const override;
+	
 };

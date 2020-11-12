@@ -31,7 +31,7 @@ public:
 public:
 	AMeleeWeapon();
 
-	UFUNCTION(BlueprintCallable, BlueprintPure)
-	class UAnimMontage* GetAnimAttack(EAttackDirection AttackDirection) const;
+	UFUNCTION(BlueprintCallable)
+	class UAnimMontage* GetAnimAttack(EAttackDirection AttackDirection);
 	
 };

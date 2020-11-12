@@ -2,6 +2,8 @@
 
 
 #include "BaseCharacter.h"
+
+#include "UnrealNetwork.h"
 #include "Camera/CameraComponent.h"
 #include "Components/InputComponent.h"
 #include "Components/SkeletalMeshComponent.h"
@@ -101,7 +103,6 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("Turn", this, &ABaseCharacter::Turn);
 	PlayerInputComponent->BindAxis("LookUp", this, &ABaseCharacter::LookUp);
 }
-
 
 void ABaseCharacter::MoveForward(float Axis)
 {

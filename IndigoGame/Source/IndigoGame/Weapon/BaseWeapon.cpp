@@ -2,9 +2,11 @@
 
 
 #include "BaseWeapon.h"
+
+#include "UnrealNetwork.h"
 #include "Components/StaticMeshComponent.h"
 
-// Sets default values
+
 ABaseWeapon::ABaseWeapon()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -15,17 +17,15 @@ ABaseWeapon::ABaseWeapon()
 
 }
 
-// Called when the game starts or when spawned
 void ABaseWeapon::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
-void ABaseWeapon::Tick(float DeltaTime)
+void ABaseWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
-	Super::Tick(DeltaTime);
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+	DOREPLIFETIME(ABaseWeapon, LastAttack);
 }
-
