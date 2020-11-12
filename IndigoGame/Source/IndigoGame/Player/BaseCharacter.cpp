@@ -121,6 +121,8 @@ void ABaseCharacter::MoveRight(float Axis)
 
 void ABaseCharacter::Turn(float Axis)
 {
+	DirectionMouseX = Axis;
+	
 	if(Axis != 0.f)
 	{
 		Axis = Axis * Sensitivity * GetWorld()->GetDeltaSeconds();
@@ -131,6 +133,8 @@ void ABaseCharacter::Turn(float Axis)
 
 void ABaseCharacter::LookUp(float Axis)
 {
+	DirectionMouseY = Axis;
+	
 	if(Axis != 0.f)
 	{
 		Axis = Axis * Sensitivity * GetWorld()->GetDeltaSeconds();

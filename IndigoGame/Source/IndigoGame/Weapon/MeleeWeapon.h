@@ -17,7 +17,7 @@ public:
 	class UCapsuleComponent* Collision;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "WeaponSettings")
-	FAttackInfo TopAttack;
+	FAttackInfo UpAttack;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "WeaponSettings")
 	FAttackInfo DownAttack;
@@ -27,7 +27,11 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "WeaponSettings")
 	FAttackInfo LeftAttack;
-	
+
+public:
 	AMeleeWeapon();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	class UAnimMontage* GetAnimAttack(EAttackDirection AttackDirection) const;
 	
 };

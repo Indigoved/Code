@@ -7,6 +7,15 @@
 #include "BaseWeapon.generated.h"
 
 
+UENUM(BlueprintType)
+enum class EAttackDirection : uint8
+{
+	Up,
+	Down,
+	Left,
+	Right
+};
+
 USTRUCT(BlueprintType)
 struct FAttackInfo
 {

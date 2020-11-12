@@ -21,6 +21,12 @@ public:
 	UPROPERTY(EditAnywhere, Category="Settings")
 	float Sensitivity;
 
+	UPROPERTY(BlueprintReadOnly, Category="Mouse")
+	float DirectionMouseX;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Mouse")
+	float DirectionMouseY;
+
 	/*HeadBoxes*/
 	/*HeadHitBox*/
 	UPROPERTY(EditDefaultsOnly, Category="HitBoxes")
